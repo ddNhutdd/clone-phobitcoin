@@ -1,0 +1,12 @@
+@import 'src/components/global/base.scss';
+
+.logo {
+    font-size: 1.8rem;
+    padding: 15px;
+
+    a {
+        font-weight: 500;
+        text-decoration: none;
+        color: #777777;
+    }
+}

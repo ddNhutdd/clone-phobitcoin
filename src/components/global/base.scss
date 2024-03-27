@@ -1,0 +1,45 @@
+$red: #a94442;
+$orange: #d98d06;
+$blue: #337ab7;
+
+$border-color: #e5e5e5;
+$border-color-2: #e7e7e7;
+
+$text-white: #fff;
+$text-dark: #333333;
+$text-color: #23527c;
+
+$border-radius: 4px;
+
+$background-color: #f8f8f8;
+$background-color-2: #f5f5f5;
+
+///
+@mixin container {
+    max-width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media screen and (max-width: 992px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+    }
+}
+
+////
+.--text-red {
+    color: $red;
+}
+
+.--text-blue {
+    color: $blue ;
+}
+
+.--text-orange {
+    color: $orange ;
+}

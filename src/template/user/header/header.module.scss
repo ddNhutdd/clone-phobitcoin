@@ -1,0 +1,79 @@
+@import 'src/components/global/base.scss';
+
+.header {
+    background-color: $background-color;
+    margin-bottom: 20px;
+    border: 1px solid $border-color-2;
+    max-height: 52px;
+
+    transition: max-height .4s;
+
+    @media screen and (max-width:992px) {
+        max-height: 1000px;
+    }
+
+    @media screen and (max-width:768px) {
+        max-height: 52px;
+        overflow: hidden;
+    }
+
+    &.showHeaderOnTablet {
+        @media screen {
+            max-height: 1000px;
+        }
+    }
+
+    .container {
+        @include container;
+
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        @media screen and (max-width:992px) {
+            flex-wrap: wrap;
+        }
+
+        .header__menu {
+            @media screen and (max-width: 768px) {
+                order: 1;
+                width: 100%;
+            }
+        }
+
+        .header__search {
+            @media screen and (max-width: 992px) {
+                width: 50%;
+                order: 1;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        .header__right {
+            margin-left: auto;
+
+            @media screen and (max-width: 992px) {
+                width: 50%;
+                order: 2;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        .header__bar {
+            margin-left: auto;
+            display: none;
+            margin-right: 15px;
+
+            @media screen and (max-width: 768px) {
+                display: block;
+            }
+        }
+    }
+}

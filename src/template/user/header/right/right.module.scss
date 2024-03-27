@@ -1,0 +1,32 @@
+@import 'src/components/global/base.scss';
+
+.right {
+    list-style: none;
+    display: flex;
+
+    @media screen and (max-width: 992px) {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        border-top: 1px solid $border-color;
+    }
+
+    li {
+        a {
+            padding: 15px;
+            text-decoration: none;
+            color: rgb(119, 119, 119);
+            font-weight: 430;
+            display: block;
+
+            &:hover {
+                color: $text-dark;
+            }
+        }
+    }
+}

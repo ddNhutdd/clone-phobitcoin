@@ -1,0 +1,26 @@
+@import 'src/components/global/base.scss';
+
+.menu {
+    display: flex;
+    list-style: none;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+
+    li {
+        a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: rgb(119, 119, 119);
+            font-weight: 430;
+
+            &:hover {
+                color: $text-dark;
+            }
+        }
+    }
+}

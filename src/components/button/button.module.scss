@@ -1,0 +1,45 @@
+@import 'src/components/global/base.scss';
+
+
+.button {
+    padding: 6px 12px;
+    border-radius: $border-radius;
+    color: $text-white;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-white;
+    cursor: pointer;
+
+    &.success {
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+
+        &:hover {
+            background-color: #449d44;
+            border-color: #398439;
+        }
+    }
+
+    &.danger {
+        background-color: #d9534f;
+        border-color: #d43f3a;
+
+        &:hover {
+            background-color: #c9302c;
+            border-color: #ac2925;
+        }
+    }
+
+    &.secondary {
+        background-color: #fff;
+        border-color: #ccc;
+        color: $text-dark;
+
+        &:hover {
+            background-color: #e6e6e6;
+            border-color: #adadad;
+        }
+    }
+}
