@@ -1,0 +1,50 @@
+@import 'src/components/global/base.scss';
+
+.transaction {
+    .transaction__header {
+        font-size: 17px;
+        font-weight: 500;
+        color: $blue;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+.transaction__alt {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    span {
+        font-weight: 500;
+    }
+}
+
+.transaction__action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+        font-weight: 500;
+    }
+
+    button {
+        white-space: nowrap;
+        margin-left: 10px;
+    }
+
+    &.first {
+        margin-right: 20px;
+    }
+}
+
+.transaction__stt {
+    font-weight: 500;
+}

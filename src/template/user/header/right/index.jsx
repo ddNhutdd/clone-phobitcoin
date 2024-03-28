@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import css from "./right.module.scss";
+import { url } from "src/constants";
 
 function Right() {
     return (
@@ -8,7 +9,7 @@ function Right() {
                 <NavLink>Liên Hệ</NavLink>
             </li>
             <li>
-                <NavLink>Đăng Nhập</NavLink>
+                <NavLink to={url.login}>Đăng Nhập</NavLink>
             </li>
         </ul>
     )

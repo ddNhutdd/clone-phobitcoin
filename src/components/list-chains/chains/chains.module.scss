@@ -1,0 +1,55 @@
+@import 'src/components/global/base.scss';
+
+.chains {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .chain__info {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        font-size: 19px;
+        font-weight: 500;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .chain__dollar {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+
+    .action {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        font-weight: 500;
+        gap: 5px;
+
+        @media screen and (max-width: 320px) {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .chains__price {
+            font-size: 16px;
+        }
+
+        button {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

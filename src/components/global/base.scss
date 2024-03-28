@@ -1,6 +1,11 @@
 $red: #a94442;
+$red-2: #843534;
 $orange: #d98d06;
 $blue: #337ab7;
+$blue-2: #23527c;
+;
+$green: #3c763d;
+$gray: #676565;
 
 $border-color: #e5e5e5;
 $border-color-2: #e7e7e7;
@@ -37,9 +42,13 @@ $background-color-2: #f5f5f5;
 }
 
 .--text-blue {
-    color: $blue ;
+    color: $blue;
 }
 
 .--text-orange {
-    color: $orange ;
+    color: $orange;
+}
+
+.--text-green {
+    color: $green;
 }

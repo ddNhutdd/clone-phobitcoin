@@ -1,0 +1,42 @@
+@import 'src/components/global/base.scss';
+
+.historyItem {
+    border: 1px solid $border-color;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+
+    .historyItem__record {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .historyItem__image {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .historyItem__info {
+                font-weight: 595;
+                color: $orange;
+            }
+        }
+
+        .historyItem__action {
+            font-weight: 550;
+        }
+
+        .historyItem__price {
+            font-weight: 500;
+        }
+    }
+}

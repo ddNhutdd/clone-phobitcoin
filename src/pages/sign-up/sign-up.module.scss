@@ -1,0 +1,73 @@
+@import 'src/components/global/base.scss';
+
+.signUp {
+    padding: 0;
+
+    .signUp__header {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-size: 19px;
+        color: $blue;
+        font-weight: 500;
+
+        svg {
+            font-size: 24px;
+        }
+    }
+
+    .signUp__main {
+        padding: 16px;
+        text-align: right;
+        background-color: $text-white;
+        border: 2px solid $border-color;
+
+        .signUp__input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            label {
+                font-weight: 500;
+                width: 25%;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .signUp__footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 16px;
+        gap: 5px;
+
+        .signUp__footer__forgot {
+            font-weight: 500;
+            color: $red;
+            text-decoration: none;
+
+            &:hover {
+                color: $red-2;
+                text-decoration: underline;
+            }
+        }
+
+        .signUp__footer__signUp {
+            font-weight: 500;
+            color: $blue;
+            text-decoration: none;
+
+            &:hover {
+                color: $blue-2;
+                text-decoration: underline;
+            }
+        }
+
+        button {
+            margin-left: 5px;
+        }
+    }
+}

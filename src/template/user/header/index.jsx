@@ -4,18 +4,14 @@ import Menu from './menu';
 import Search from './search';
 import Right from './right';
 import Bar from './bar';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function Header() {
 
-    const [showMenuOnTable, setShowMenuOnTable] = useState(false);
+    const [showMenuOnTablet, setShowMenuOnTablet] = useState(false);
 
-    const showMenuToggle = () => setShowMenuOnTable(s => !s)
-    const renderClassShowMenuOnTablet = () => showMenuOnTable ? css.showHeaderOnTablet : '';
-
-    useEffect(() => {
-        console.log(showMenuOnTable);
-    }, [showMenuOnTable])
+    const showMenuToggle = () => setShowMenuOnTablet(s => !s)
+    const renderClassShowMenuOnTablet = () => showMenuOnTablet ? css.showHeaderOnTablet : '';
 
     return (
         <div className={`${css.header} ${renderClassShowMenuOnTablet()} `}>

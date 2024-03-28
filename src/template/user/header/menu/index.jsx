@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import css from './menu.module.scss';
+import { url } from "src/constants";
 
 function Menu() {
     return (
         <ul className={css.menu}>
             <li>
-                <NavLink to={`#`}>Giao Dịch</NavLink>
+                <NavLink to={url.transaction}>Giao Dịch</NavLink>
             </li>
             <li>
                 <NavLink to={`#`}>Kiến Thức</NavLink>

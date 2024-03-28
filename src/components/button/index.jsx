@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 export const buttonType = {
     success: 'success',
     danger: 'danger',
-    secondary: 'secondary'
+    secondary: 'secondary',
+    primary: 'primary'
 }
 
 function Button(props) {
     const {
         type,
         children,
-        className
+        className,
+        onClick
     } = props;
 
 
@@ -23,6 +25,8 @@ function Button(props) {
                 return css.danger
             case buttonType.secondary:
                 return css.secondary
+            case buttonType.primary:
+                return css.primary
             default:
                 return css.secondary
         }
@@ -30,6 +34,7 @@ function Button(props) {
 
     return (
         <button
+            onClick={onClick}
             className={`${css.button} ${renderType()} ${className}`}
         >
             {children}
@@ -44,6 +49,7 @@ Button.propTypes = {
         PropTypes.string,
         PropTypes.object,
     ]),
+    onClick: PropTypes.func
 };
 
 export default Button

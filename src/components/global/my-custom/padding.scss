@@ -27,6 +27,10 @@
     padding-right: 0;
 }
 
+.pr-1 {
+    padding-right: $space;
+}
+
 .pr-2 {
     padding-right: $space * 2;
 }
@@ -130,6 +134,10 @@
         // padding right ----------------------------------------------------------------
         .pr-#{$breakpoint}-0 {
             padding-right: 0;
+        }
+
+        .pr-#{$breakpoint}-1 {
+            padding-right: $space;
         }
 
         .pr-#{$breakpoint}-2 {

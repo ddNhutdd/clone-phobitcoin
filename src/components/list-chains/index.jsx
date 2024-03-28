@@ -1,9 +1,51 @@
-import React from 'react'
+import Button, { buttonType } from '../button'
 import Card from '../card'
+import Chains from './chains'
+import css from './list-chains.module.scss'
 
 function ListChains() {
+    const list = [
+        {
+            id: 1,
+            image: 'https://phobitcoin.com/public/frontend//images/btc.ico',
+            chain: 'Bitcoin',
+            dollar: `69,662.00`,
+            buyPrice: `1,785,108,620`,
+            sellPrice: `1,806,527,959`
+        },
+        {
+            id: 2,
+            image: 'https://phobitcoin.com/public/frontend//images/btc.ico',
+            chain: 'Bitcoin',
+            dollar: `69,662.00`,
+            buyPrice: `1,785,108,620`,
+            sellPrice: `1,806,527,959`
+        },
+        {
+            id: 3,
+            image: 'https://phobitcoin.com/public/frontend//images/btc.ico',
+            chain: 'Bitcoin',
+            dollar: `69,662.00`,
+            buyPrice: `1,785,108,620`,
+            sellPrice: `1,806,527,959`
+        }
+    ]
+
+    const renderlistChains = () => list.map(item => <Chains key={item.id} item={item} />)
+
     return (
-        <div><Card></Card></div>
+        <div className={css.listChains}>
+            {renderlistChains()}
+            <Card className={css.listChains__last}>
+                <div className={css.listChains__last__top}>
+                    <img src="https://phobitcoin.com/public/frontend//images/altcoins.png" alt="coins" />
+                    Hơn 30 Altcoin Khác
+                </div>
+                <Button type={buttonType.primary}>
+                    Mua Bán Ngay
+                </Button>
+            </Card>
+        </div>
     )
 }
 
