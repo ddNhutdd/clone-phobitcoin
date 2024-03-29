@@ -15,7 +15,8 @@ export const url = {
     referral: '/referral',
     buyHistory: '/buy-history',
     sellHistory: '/sell-history',
-    changePassword: '/change-password'
+    changePassword: '/change-password',
+    sell: '/sell'
 }
 
 export const apiStatus = {
@@ -47,4 +48,5 @@ export const mediaBreakPoint = {
 
 export const regular = {
     email: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-  } 
+    inputTypeNumber: /^\d*([.,]?\d+)?$/
+} 

@@ -19,6 +19,7 @@ const Referral = lazy(() => import('pages/referral'));
 const BuyHistory = lazy(() => import('pages/buy-history'));
 const SellHistory = lazy(() => import('pages/sell-history'));
 const ChangePassword = lazy(() => import('pages/change-password'))
+const Sell = lazy(() => import('pages/sell'))
 
 export const router = createBrowserRouter([
   {
@@ -104,6 +105,14 @@ export const router = createBrowserRouter([
             <Contact />
           </Suspense>
         )
+      },
+      {
+        path: url.sell,
+        element: (
+          <Suspense>
+            <Sell />
+          </Suspense>
+        )
       }
     ]
   },
@@ -152,3 +161,5 @@ export const router = createBrowserRouter([
     ]
   }
 ])
+
+

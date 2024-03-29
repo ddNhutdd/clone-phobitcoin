@@ -20,10 +20,13 @@ const Input = forwardRef((props, ref) => {
         errorMessage,
         asame
     } = props;
+
+    const renderClassError = () => errorMessage ? css.err : '';
+
     return (
         <div className='flex flex-col w-100'>
             <div
-                className={`${css.input}`}
+                className={`${css.input} ${renderClassError()}`}
             >
                 <input
                     id={id}

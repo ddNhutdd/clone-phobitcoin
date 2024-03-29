@@ -5,7 +5,8 @@ export const buttonType = {
     success: 'success',
     danger: 'danger',
     secondary: 'secondary',
-    primary: 'primary'
+    primary: 'primary',
+    oneTime: 'oneTime'
 }
 export const buttonHtmlType = {
     button: 'button',
@@ -32,6 +33,8 @@ function Button(props) {
                 return css.secondary
             case buttonType.primary:
                 return css.primary
+            case buttonType.oneTime:
+                return css.oneTime
             default:
                 return css.secondary
         }

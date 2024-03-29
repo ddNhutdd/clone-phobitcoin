@@ -52,4 +52,14 @@
             border-color: #204d74;
         }
     }
+
+    &.oneTime {
+        background: $background-color-3;
+        color: $text-white;
+
+        &:hover {
+            background: $background-color-3;
+            color: $text-dark;
+        }
+    }
 }
