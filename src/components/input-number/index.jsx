@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function InputNumber(props) {
     const {
         onChange,
@@ -78,5 +80,11 @@ function InputNumber(props) {
         />
     );
 }
+
+InputNumber.propTypes = {
+    onChange: PropTypes.func,
+    id: PropTypes.string,
+    errorMessage: PropTypes.string
+};
 
 export default InputNumber
