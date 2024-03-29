@@ -10,27 +10,23 @@ function Transaction() {
     const columns = [
         {
             title: 'STT',
-            dataIndex: 'stt',
-            key: '1',
+            key: 'stt',
         },
         {
             title: 'AltCoin',
-            dataIndex: 'alt',
-            key: '2',
+            key: 'alt',
         },
         {
             title: <div className='flex items-center justify-center'>
                 Giá Mua
             </div>,
-            dataIndex: 'buy',
-            key: '3',
+            key: 'buy',
         },
         {
             title: <div className='flex items-center justify-center'>
                 Giá Bán
             </div>,
-            dataIndex: 'sell',
-            key: '4',
+            key: 'sell',
         }
     ];
     const dataSource = [

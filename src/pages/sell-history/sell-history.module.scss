@@ -1,0 +1,42 @@
+@import 'src/components/global/base.scss';
+
+.sellHistory {
+    @media screen and (max-width: 768px) {
+        margin-top: -200px;
+    }
+
+    .sellHistory__header {
+        color: $blue;
+        font-weight: 500;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .sellHistory__table {
+        table {
+            border: 1px solid $border-color;
+
+            tr {
+                background-color: transparent;
+            }
+
+            th,
+            td {
+                border: 1px solid $border-color;
+
+                svg {
+                    color: $red;
+                }
+
+                a {
+                    color: $blue;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

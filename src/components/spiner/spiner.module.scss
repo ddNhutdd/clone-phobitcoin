@@ -1,0 +1,10 @@
+.spiner {
+    animation: roto 0.8s infinite linear;
+    font-size: 25px;
+}
+
+@keyframes roto {
+    100% {
+        transform: rotate(360deg);
+    }
+}

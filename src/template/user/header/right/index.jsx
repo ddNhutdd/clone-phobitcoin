@@ -6,7 +6,10 @@ function Right() {
     return (
         <ul className={css.right}>
             <li>
-                <NavLink>Liên Hệ</NavLink>
+                <NavLink to={url.contact}>Liên Hệ</NavLink>
+            </li>
+            <li>
+                <NavLink to={url.profile}>Quản lí tài khoản</NavLink>
             </li>
             <li>
                 <NavLink to={url.login}>Đăng Nhập</NavLink>

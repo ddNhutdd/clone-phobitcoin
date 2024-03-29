@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { regular, sidebarDefault, url } from 'src/constants';
+import { regular, sidebarDefault } from 'src/constants';
 import { setShowContentSidebar, sidebarContent } from 'src/redux/slices/user-template'
 import css from './sign-up.module.scss';
 import Card from 'src/components/card';
 import { BiSolidUser } from 'react-icons/bi';
 import Input, { inputType } from 'src/components/input';
-import { NavLink } from 'react-router-dom';
 import Button, { buttonType } from 'src/components/button';
 import { useForm } from 'src/hooks/use-form';
 
@@ -81,7 +80,7 @@ function SignUp() {
                     </div>
                     <div className={css.signUp__input}>
                         <label htmlFor="phone">
-                            Số điện thoại
+                            Số điện thoại:
                         </label>
                         <Input
                             max={[30, 'Mật khẩu quá dài']}
@@ -90,19 +89,33 @@ function SignUp() {
                             errorMessage={errors['phone']}
                         />
                     </div>
+                    <div className={`${css.signUp__input} ${css.law}`}>
+                        <label>
+                            Điều Khoản:
+                        </label>
+                        <Card className={css.signUp__law}>
+                            <div>
+                                <span className={css.signUp__firstLine}></span>
+                                - Nghiêm cấm hành vi mua bán không chính chủ, rửa tiền, chúng tôi có thể giữ tiền để phối hợp với các cơ quan chức năng nếu phát hiện dấu hiệu khả nghi.
+                            </div>
+                            <div>
+                                <span className={css.signUp__firstLine}></span>
+                                - Vui lòng chuyển đúng Coin, đúng mạng lưới với giao dịch bán và đúng STK với giao dịch mua. Nếu quý khách chuyển sai sẽ dẫn đến mất tài sản và Phố Bitcoin không chịu trách nhiệm.
+                            </div>
+                            <div>
+                                <span className={css.signUp__firstLine}></span>
+                                - Phố Bitcoin chỉ là bên mua bán tiền điện tử và không liên quan tới bất kì dự án nào.
+                            </div>
+                            <div>
+                                <span className={css.signUp__firstLine}></span>
+                                - Khách hàng mua bán đồng ý cam kết không sử dụng Coin làm phương tiện thanh toán tại VN. Điều khoản chi tiết đọc thêm tại https://phobitcoin.com/policy
+                            </div>
+                        </Card>
+                    </div>
                 </div>
                 <div className={css.signUp__footer}>
-                    <NavLink to={url.forgotPassword} className={css.signUp__footer__forgot}>
-                        Quên mật khẩu
-                    </NavLink>
-                    {" "}
-                    -
-                    {" "}
-                    <NavLink className={css.signUp__footer__signUp}>
-                        Đăng kí tài khoản
-                    </NavLink>
                     <Button type={buttonType.danger}>
-                        Đăng Nhập
+                        Đăng Kí
                     </Button>
                 </div>
             </form>

@@ -1,0 +1,32 @@
+@import 'src/components/global/base.scss';
+
+.referral {
+    font-weight: 500;
+
+    .referral--bolder {
+        font-weight: 700;
+    }
+
+    .header {
+        font-weight: 500;
+        color: $blue;
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: -15px;
+    }
+
+    p {
+        margin-bottom: 8px;
+
+        a {
+            text-decoration: none;
+            color: $blue;
+            margin-left: 5px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

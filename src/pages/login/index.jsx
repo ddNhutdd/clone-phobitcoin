@@ -64,7 +64,7 @@ function Login() {
                     {" "}
                     -
                     {" "}
-                    <NavLink className={css.login__footer__login}>
+                    <NavLink to={url.signUp} className={css.login__footer__login}>
                         Đăng kí tài khoản
                     </NavLink>
                     <Button type={buttonType.danger}>

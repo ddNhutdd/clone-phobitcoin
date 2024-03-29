@@ -1,0 +1,68 @@
+@import "src/components/global/base.scss";
+
+.profile {
+    padding: 0;
+
+    .profile__header {
+        padding: 16px;
+        font-size: 18px;
+        color: $blue;
+        margin-top: 10px;
+        padding-bottom: 26px;
+        font-weight: 500;
+        border-bottom: 1px solid $border-color;
+    }
+
+    .profile__content {
+        padding: 16px;
+        background-color: $text-white;
+        border: 1px solid $border-color;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @media screen and (max-width: 768px) {
+            gap: 10;
+        }
+
+        .profile__row {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            grid-template-rows: auto;
+            gap: 30px;
+            width: 100%;
+
+            @media screen and (max-width: 992px) {
+                gap: 10px;
+            }
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: 100%;
+            }
+
+            div {
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+
+                &:first-child {
+                    justify-content: flex-end;
+
+                    @media screen and (max-width: 768px) {
+                        justify-content: flex-start;
+                    }
+
+                }
+
+                a {
+                    color: $blue;
+                    text-decoration: none;
+                    display: inline-block;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}

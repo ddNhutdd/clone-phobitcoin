@@ -3,12 +3,26 @@ import css from './forgot-password.module.scss';
 import { BiSolidUser } from 'react-icons/bi';
 import { useForm } from 'src/hooks/use-form';
 import Input from 'src/components/input';
-import { regular } from 'src/constants';
+import { regular, sidebarDefault } from 'src/constants';
 import Button, { buttonType } from 'src/components/button';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setShowContentSidebar, sidebarContent } from 'src/redux/slices/user-template';
 
 function ForgotPassword() {
+    const dispatch = useDispatch();
     const formSubmit = (values) => console.log(values);
     const [, errors, submitHandle, register] = useForm(formSubmit);
+
+    useEffect(() => {
+        dispatch(setShowContentSidebar({
+            [sidebarContent.chains]: true,
+        }))
+
+        return () => {
+            dispatch(setShowContentSidebar(sidebarDefault))
+        }
+    }, [])
 
     return (
         <Card className={css.forgotPassword}>
@@ -32,7 +46,7 @@ function ForgotPassword() {
                 </div>
                 <div className={css.forgotPassword__footer}>
                     <Button type={buttonType.danger}>
-                        Đăng Nhập
+                        Gửi Yêu Cầu
                     </Button>
                 </div>
             </form>

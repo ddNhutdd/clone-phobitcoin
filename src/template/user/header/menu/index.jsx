@@ -9,13 +9,13 @@ function Menu() {
                 <NavLink to={url.transaction}>Giao Dịch</NavLink>
             </li>
             <li>
-                <NavLink to={`#`}>Kiến Thức</NavLink>
+                <NavLink to={url.knowledge}>Kiến Thức</NavLink>
             </li>
             <li>
-                <NavLink to={`#`}>Tin Tức</NavLink>
+                <NavLink to={url.news}>Tin Tức</NavLink>
             </li>
             <li>
-                <NavLink to={`#`}>Hỏi Đáp</NavLink>
+                <NavLink to={url.questionAnswer}>Hỏi Đáp</NavLink>
             </li>
         </ul>
     )

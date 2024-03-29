@@ -22,7 +22,7 @@ function Post(props) {
 }
 
 Post.propTypes = {
-    item: PropTypes.node,
+    item: PropTypes.object,
 }
 
 export default Post

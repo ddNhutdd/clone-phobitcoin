@@ -13,7 +13,7 @@ function Table(props) {
         return (
             <tr key={rowData.key}>
                 {columns.map(column => (
-                    <td key={column.dataIndex}>{rowData[column.dataIndex]}</td>
+                    <td key={column.key}>{rowData[column.key]}</td>
                 ))}
             </tr>
         );

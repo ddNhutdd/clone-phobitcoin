@@ -26,7 +26,7 @@ function Posts() {
         }
     ]
 
-    const renderList = () => list.map(item => <Post key={item.id} item={item}></Post>)
+    const renderList = () => list.map(rec => <Post key={rec.id} item={rec}></Post>)
 
     return (
         <Card className={css.posts}>

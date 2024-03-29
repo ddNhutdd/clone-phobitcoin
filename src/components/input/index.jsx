@@ -23,7 +23,7 @@ const Input = forwardRef((props, ref) => {
     return (
         <div className='flex flex-col w-100'>
             <div
-                className={css.input}
+                className={`${css.input}`}
             >
                 <input
                     id={id}
@@ -39,9 +39,12 @@ const Input = forwardRef((props, ref) => {
                 />
 
             </div>
-            <span className={css.input__error}>
-                {errorMessage}
-            </span>
+            {
+                errorMessage && <span className={css.input__error}>
+                    {errorMessage}
+                </span>
+            }
+
         </div>
 
     )

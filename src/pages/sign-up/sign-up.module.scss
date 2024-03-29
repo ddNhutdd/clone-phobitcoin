@@ -29,10 +29,37 @@
             gap: 10px;
             margin-bottom: 10px;
 
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
             label {
                 font-weight: 500;
                 width: 25%;
                 margin-top: 5px;
+                white-space: nowrap;
+                min-width: fit-content;
+
+                @media screen and (max-width: 768px) {
+                    text-align: left;
+                }
+            }
+
+            .signUp__law {
+                text-align: left;
+                width: 80%;
+                max-height: 350px;
+                overflow: auto;
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+
+
+                .signUp__firstLine {
+                    display: inline-block;
+                    width: 40px;
+                }
             }
         }
     }

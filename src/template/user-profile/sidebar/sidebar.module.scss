@@ -1,0 +1,32 @@
+@import 'src/components/global/base.scss';
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+        display: block;
+        padding: 8px;
+        background-color: $text-white;
+        border-radius: $border-radius;
+        box-shadow: 0px 0px 8px 0px rgba(179, 179, 179, 1);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: $text-dark;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .4s, color .4s;
+
+        &:hover {
+            background: #e91e63;
+            color: white;
+        }
+
+        svg {
+            font-size: 18px;
+        }
+    }
+}

@@ -7,13 +7,18 @@ export const buttonType = {
     secondary: 'secondary',
     primary: 'primary'
 }
+export const buttonHtmlType = {
+    button: 'button',
+    submit: 'submit'
+}
 
 function Button(props) {
     const {
         type,
         children,
         className,
-        onClick
+        onClick,
+        htmlTyle
     } = props;
 
 
@@ -34,6 +39,7 @@ function Button(props) {
 
     return (
         <button
+            type={htmlTyle}
             onClick={onClick}
             className={`${css.button} ${renderType()} ${className}`}
         >
@@ -44,12 +50,17 @@ function Button(props) {
 
 Button.propTypes = {
     type: PropTypes.oneOf(Object.values(buttonType)),
+    htmlTyle: PropTypes.oneOf(Object.values(buttonHtmlType)),
     children: PropTypes.node,
     className: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.object,
     ]),
     onClick: PropTypes.func
+};
+
+Button.defaultProps = {
+    htmlTyle: buttonHtmlType.submit
 };
 
 export default Button
