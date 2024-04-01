@@ -75,6 +75,7 @@ function InputNumber(props) {
 
     return (
         <input
+            id={id}
             type="text"
             onChange={handleChange}
         />

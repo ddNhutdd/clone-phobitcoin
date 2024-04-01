@@ -8,6 +8,7 @@ import { alertType } from 'src/contexts/alert-context';
 import Card from 'src/components/card';
 import Button, { buttonType } from 'src/components/button';
 import InputNumber from 'src/components/input-number';
+import { NavLink } from 'react-router-dom';
 
 function Sell() {
     const dispatch = useDispatch();
@@ -32,11 +33,33 @@ function Sell() {
                 <div className={css.sell__main_header}>
                     Giao Dịch Bán Bitcoin (BTC)
                 </div>
-                <div>
-                    <InputNumber />
+                <div className={css.sell__main}>
+                    <div className={css.sell__main__input}>
+                        <label htmlFor='amountEth'>Số lượng ETH bán</label>
+                        <InputNumber
+                            id='amountEth'
+                        />
+                    </div>
+                    <div className={css.sell__main__input}>
+                        <label>Giao thức</label>
+                        <div>
+
+                        </div>
+                    </div>
                 </div>
                 <div className={css.sell__main_footer}>
                     <Button type={buttonType.oneTime}>Tiếp tục</Button>
+                    <div>
+                        Vui lòng
+                        <NavLink>
+                            Đăng nhập
+                        </NavLink>
+                        hoặc
+                        <NavLink>
+                            Đăng ký
+                        </NavLink>
+                        tài khoản để giao dịch.
+                    </div>
                 </div>
             </Card>
             <Card className={css.sell__guide}></Card>
