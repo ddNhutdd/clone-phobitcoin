@@ -50,3 +50,5 @@ export const regular = {
     email: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
     inputTypeNumber: /^\d*([.,]?\d+)?$/
 } 
+
+export const keyReCapchaApi = `6LcoqqopAAAAAEVy8l4zMS1G-BErenkF9D4VW4Lg`

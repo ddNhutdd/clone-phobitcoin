@@ -5,7 +5,8 @@ export const RadioButton = (props) => {
     const {
         name,
         id,
-        children
+        children,
+        checked
     } = props;
     return (
         <div className={css.radioButton}>
@@ -13,12 +14,15 @@ export const RadioButton = (props) => {
                 type='radio'
                 id={id}
                 name={name}
+                className='d-0'
+                checked={checked}
             />
             <label
                 htmlFor={id}
+                className={css.radioButton__label}
             >
                 <div className={css.radioButton__circle}>
-
+                    <div className={css.radioButton__dot}></div>
                 </div>
                 <div className={css.radioButton__text}>
                     {children}
@@ -32,5 +36,6 @@ export const RadioButton = (props) => {
 RadioButton.propTypes = {
     name: PropTypes.string,
     id: PropTypes.id,
-    children: PropTypes.node
+    children: PropTypes.node,
+    checked: PropTypes.bool
 }

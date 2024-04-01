@@ -62,7 +62,7 @@ Input.propTypes = {
     min: PropTypes.array,
     regular: PropTypes.array,
     onChange: PropTypes.func,
-    errorMessage: PropTypes.string,
+    errorMessage: PropTypes.node,
     asame: PropTypes.array
 }
 

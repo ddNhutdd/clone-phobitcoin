@@ -9,6 +9,8 @@ import Card from 'src/components/card';
 import Button, { buttonType } from 'src/components/button';
 import InputNumber from 'src/components/input-number';
 import { NavLink } from 'react-router-dom';
+import { RadioButton } from 'src/components/radio-button';
+import Input from 'src/components/input';
 
 function Sell() {
     const dispatch = useDispatch();
@@ -43,8 +45,49 @@ function Sell() {
                     <div className={css.sell__main__input}>
                         <label>Giao thức</label>
                         <div>
-
+                            <RadioButton
+                                id={`ERC20`}
+                                name={`protocol`}
+                            >
+                                ERC20
+                            </RadioButton>
+                            <RadioButton
+                                id={`BEP20`}
+                                name={`protocol`}
+                                checked={true}
+                            >
+                                BEP20 - BSC
+                            </RadioButton>
                         </div>
+                    </div>
+                    <div className={css.sell__main__input}>
+                        <label htmlFor="accountNumber">Số tài khoản</label>
+                        <Input
+                            id={`accountNumber`}
+                            errorMessage={
+                                <>
+                                    Hãy cập nhật STK để Lần sau bạn sẽ không cần phải nhập STK nữa.
+                                    <NavLink>Cập nhật STK TẠI ĐÂY</NavLink>
+                                </>}
+                        />
+                    </div>
+                    <div className={css.sell__main__input}>
+                        <label htmlFor="bank">Tại Ngân Hàng</label>
+                        <Input
+                            id={`bank`}
+                        />
+                    </div>
+                    <div className={css.sell__main__input}>
+                        <label htmlFor="accountName">
+                            Tên tài khoản nhận tiền
+                        </label>
+                        <Input
+                            id={`accountName`}
+                        />
+                    </div>
+                    <div className={css.sell__main__input}>
+                        <label htmlFor="total">Thành Tiền: </label>
+                        <Input />
                     </div>
                 </div>
                 <div className={css.sell__main_footer}>
