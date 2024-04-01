@@ -8,6 +8,7 @@ import Button, { buttonType } from 'src/components/button';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setShowContentSidebar, sidebarContent } from 'src/redux/slices/user-template';
+import { Captcha } from 'src/components/captcha';
 
 function ForgotPassword() {
     const dispatch = useDispatch();
@@ -42,6 +43,22 @@ function ForgotPassword() {
                             {...register('email')}
                             errorMessage={errors['email']}
                         />
+                    </div>
+                    <div className={css.forgotPassword__input}>
+                        <label> </label>
+                        <div className='ml-a w-md-100 ml-sm-0'>
+                            <Captcha></Captcha>
+                            <Input
+                                {...register('captcha')}
+                                require={[true, 'Captcha không được bỏ trống']}
+                                max={[6, 'Captcha quá dài']}
+                                min={[6, "Captcha quá ngắn"]}
+                                className='mt-2'
+                                placeholder={`Nhập captcha`}
+                                errorMessage={errors['captcha']}
+                            />
+                        </div>
+
                     </div>
                 </div>
                 <div className={css.forgotPassword__footer}>

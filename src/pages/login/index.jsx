@@ -9,6 +9,7 @@ import { BiSolidUser } from "react-icons/bi";
 import Input, { inputType } from 'src/components/input';
 import { useForm } from 'src/hooks/use-form';
 import { regular, sidebarDefault, url } from 'src/constants';
+import { Captcha } from 'src/components/captcha';
 
 function Login() {
     const dispatch = useDispatch();
@@ -53,8 +54,27 @@ function Login() {
                             max={[30, 'Mật khẩu quá dài']}
                             min={[6, "Mật khẩu quá ngắn"]}
                             {...register('password')}
+                            require={[true, 'Không được bỏ trống']}
                             errorMessage={errors['password']}
                         />
+                    </div>
+                    <div className={css.login__input}>
+                        <label htmlFor="password">
+
+                        </label>
+                        <div className='ml-a ml-sm-0'>
+                            <Captcha></Captcha>
+                            <Input
+                                {...register('captcha')}
+                                require={[true, 'Không được bỏ trống']}
+                                max={[6, 'Captcha quá dài']}
+                                min={[6, "Captcha quá ngắn"]}
+                                className='mt-2'
+                                placeholder={`Nhập captcha`}
+                                errorMessage={errors['captcha']}
+                            />
+                        </div>
+
                     </div>
                 </div>
                 <div className={css.login__footer}>

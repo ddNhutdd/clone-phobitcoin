@@ -4,9 +4,15 @@ import Button, { buttonType } from 'src/components/button';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setShowContentSidebar, sidebarContent } from 'src/redux/slices/user-template';
-import { sidebarDefault } from 'src/constants';
+import { sidebarDefault, url } from 'src/constants';
+import { useNavigate } from 'react-router-dom';
 
 function Transaction() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const redirectPage = (page) => navigate(page);
+
     const columns = [
         {
             title: 'STT',
@@ -39,78 +45,94 @@ function Transaction() {
                     BTC
                 </span>
             </div>,
-            buy: <div className={`${css.transaction__action} ${css.first}`}>
-                <span className='--text-red'>
-                    1,802,464,492
-                </span>
-                <Button type={buttonType.danger}>
-                    Bán Ngay
-                </Button>
-            </div>,
-            sell: <div className={css.transaction__action}>
+            buy: <div className={css.transaction__action}>
                 <span className='--text-green'>
                     1,826,554,193
                 </span>
-                <Button type={buttonType.success}>
+                <Button
+                    onClick={redirectPage.bind(null, url.buy)}
+                    type={buttonType.success}
+                >
                     Mua Ngay
+                </Button>
+            </div>,
+            sell: <div className={`${css.transaction__action} ${css.first}`}>
+                <span className='--text-red'>
+                    1,802,464,492
+                </span>
+                <Button
+                    onClick={redirectPage.bind(null, url.sell)}
+                    type={buttonType.danger}
+                >
+                    Bán Ngay
                 </Button>
             </div>,
         },
         {
             key: 2,
-            stt: <span className={css.transaction__stt}>2</span>,
+            stt: <span className={css.transaction__stt}>1</span>,
             alt: <div className={css.transaction__alt}>
                 <img src="https://phobitcoin.com/public/frontend//images/btc.ico" alt="btc" />
                 <span>
                     BTC
                 </span>
             </div>,
-            buy: <div className={`${css.transaction__action} ${css.first}`}>
-                <span className='--text-red'>
-                    1,802,464,492
-                </span>
-                <Button type={buttonType.danger}>
-                    Bán Ngay
-                </Button>
-            </div>,
-            sell: <div className={css.transaction__action}>
+            buy: <div className={css.transaction__action}>
                 <span className='--text-green'>
                     1,826,554,193
                 </span>
-                <Button type={buttonType.success}>
+                <Button
+                    onClick={redirectPage.bind(null, url.buy)}
+                    type={buttonType.success}
+                >
                     Mua Ngay
+                </Button>
+            </div>,
+            sell: <div className={`${css.transaction__action} ${css.first}`}>
+                <span className='--text-red'>
+                    1,802,464,492
+                </span>
+                <Button
+                    onClick={redirectPage.bind(null, url.sell)}
+                    type={buttonType.danger}
+                >
+                    Bán Ngay
                 </Button>
             </div>,
         },
         {
             key: 3,
-            stt: <span className={css.transaction__stt}>3</span>,
+            stt: <span className={css.transaction__stt}>1</span>,
             alt: <div className={css.transaction__alt}>
                 <img src="https://phobitcoin.com/public/frontend//images/btc.ico" alt="btc" />
                 <span>
                     BTC
                 </span>
             </div>,
-            buy: <div className={`${css.transaction__action} ${css.first}`}>
-                <span className='--text-red'>
-                    1,802,464,492
-                </span>
-                <Button type={buttonType.danger}>
-                    Bán Ngay
-                </Button>
-            </div>,
-            sell: <div className={css.transaction__action}>
+            buy: <div className={css.transaction__action}>
                 <span className='--text-green'>
                     1,826,554,193
                 </span>
-                <Button type={buttonType.success}>
+                <Button
+                    onClick={redirectPage.bind(null, url.buy)}
+                    type={buttonType.success}
+                >
                     Mua Ngay
+                </Button>
+            </div>,
+            sell: <div className={`${css.transaction__action} ${css.first}`}>
+                <span className='--text-red'>
+                    1,802,464,492
+                </span>
+                <Button
+                    onClick={redirectPage.bind(null, url.sell)}
+                    type={buttonType.danger}
+                >
+                    Bán Ngay
                 </Button>
             </div>,
         }
     ];
-
-    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(setShowContentSidebar({

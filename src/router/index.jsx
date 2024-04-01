@@ -21,6 +21,7 @@ const SellHistory = lazy(() => import('pages/sell-history'));
 const ChangePassword = lazy(() => import('pages/change-password'));
 const Sell = lazy(() => import('pages/sell'));
 const Buy = lazy(() => import('pages/buy'));
+const P2p = lazy(() => import('pages/p2p'))
 
 export const router = createBrowserRouter([
   {
@@ -120,6 +121,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense>
             <Buy />
+          </Suspense>
+        )
+      },
+      {
+        path: url.p2p,
+        element: (
+          <Suspense>
+            <P2p />
           </Suspense>
         )
       }

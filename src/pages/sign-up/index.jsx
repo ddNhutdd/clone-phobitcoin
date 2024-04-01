@@ -8,6 +8,7 @@ import { BiSolidUser } from 'react-icons/bi';
 import Input, { inputType } from 'src/components/input';
 import Button, { buttonType } from 'src/components/button';
 import { useForm } from 'src/hooks/use-form';
+import { Captcha } from 'src/components/captcha';
 
 function SignUp() {
     const dispatch = useDispatch();
@@ -111,6 +112,22 @@ function SignUp() {
                                 - Khách hàng mua bán đồng ý cam kết không sử dụng Coin làm phương tiện thanh toán tại VN. Điều khoản chi tiết đọc thêm tại https://phobitcoin.com/policy
                             </div>
                         </Card>
+                    </div>
+                    <div className={css.signUp__input}>
+                        <label> </label>
+                        <div className='ml-a w-md-100 ml-sm-0'>
+                            <Captcha></Captcha>
+                            <Input
+                                {...register('captcha')}
+                                require={[true, 'Captcha không được bỏ trống']}
+                                max={[6, 'Captcha quá dài']}
+                                min={[6, "Captcha quá ngắn"]}
+                                className='mt-2'
+                                placeholder={`Nhập captcha`}
+                                errorMessage={errors['captcha']}
+                            />
+                        </div>
+
                     </div>
                 </div>
                 <div className={css.signUp__footer}>

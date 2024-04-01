@@ -17,7 +17,8 @@ export const url = {
     sellHistory: '/sell-history',
     changePassword: '/change-password',
     sell: '/sell',
-    buy: '/buy'
+    buy: '/buy',
+    p2p: '/p2p'
 }
 
 export const apiStatus = {
