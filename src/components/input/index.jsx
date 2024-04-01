@@ -32,7 +32,7 @@ const Input = forwardRef((props, ref) => {
                     id={id}
                     placeholder={placeholder}
                     onChange={onChange}
-                    href={ref}
+                    ref={ref}
                     type={type}
                     data-require={JSON.stringify(require)}
                     data-max={JSON.stringify(max)}

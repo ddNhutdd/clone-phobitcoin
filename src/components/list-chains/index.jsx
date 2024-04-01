@@ -1,7 +1,9 @@
+import { url } from 'src/constants'
 import Button, { buttonType } from '../button'
 import Card from '../card'
 import Chains from './chains'
 import css from './list-chains.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 function ListChains() {
     const list = [
@@ -31,6 +33,9 @@ function ListChains() {
         }
     ]
 
+    const navigate = useNavigate();
+
+    const redirectPage = (page) => navigate(page)
     const renderlistChains = () => list.map(item => <Chains key={item.id} item={item} />)
 
     return (
@@ -41,7 +46,7 @@ function ListChains() {
                     <img src="https://phobitcoin.com/public/frontend//images/altcoins.png" alt="coins" />
                     Hơn 30 Altcoin Khác
                 </div>
-                <Button type={buttonType.primary}>
+                <Button onClick={redirectPage.bind(null, url.transaction)} type={buttonType.primary}>
                     Mua Bán Ngay
                 </Button>
             </Card>

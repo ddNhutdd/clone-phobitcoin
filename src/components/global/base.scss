@@ -6,6 +6,7 @@ $blue-2: #23527c;
 
 $green: #3c763d;
 $gray: #676565;
+$gray-2: #555555;
 
 $border-color: #e5e5e5;
 $border-color-2: #e7e7e7;
@@ -38,6 +39,10 @@ $background-color-3: #e91e63;
 }
 
 ////
+.--text-pink {
+    color: $background-color-3;
+}
+
 .--text-red {
     color: $red;
 }

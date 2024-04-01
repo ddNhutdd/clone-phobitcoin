@@ -1,0 +1,63 @@
+@import 'src/components/global/base.scss';
+
+
+.inputNumber {
+    width: 100%;
+
+    .inputNumber__container {
+        padding: 6px 12px;
+        border-radius: $border-radius;
+        background-color: $text-white;
+        border: 1px solid $background-color-3;
+        height: 34px;
+        display: flex;
+        overflow: hidden;
+
+        &.disabled {
+            background-color: $background-color;
+            border-color: $border-color;
+
+            .inputNumber__text {
+                background-color: $background-color;
+                border-color: $border-color;
+                color: $gray-2;
+            }
+
+            input {
+                color: $gray-2;
+            }
+        }
+
+        input {
+            outline: none;
+            border: none;
+            flex: 1;
+            width: 100%;
+
+            &:disabled {
+                background-color: $background-color;
+            }
+        }
+
+        .inputNumber__text {
+            margin-top: -6px;
+            margin-bottom: -6px;
+            margin-right: -12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            background-color: $background-color-3;
+            color: $text-white;
+            flex-grow: 0;
+            flex-shrink: 0;
+            border-left: 1px solid $background-color-3;
+        }
+    }
+
+    .inputNumberError {
+        color: $red;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+}

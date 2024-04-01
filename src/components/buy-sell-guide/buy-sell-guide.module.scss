@@ -1,0 +1,21 @@
+@import 'src/components/global/base.scss';
+
+.BuySellGuide__guide {
+    padding: 0;
+
+    .BuySellGuide__guide__container {
+        border: 1px solid $border-color;
+        background-color: $text-white;
+        padding: 16px;
+
+        .BuySellGuide__guide__title {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 40px;
+            margin-bottom: 10px;
+        }
+    }
+}

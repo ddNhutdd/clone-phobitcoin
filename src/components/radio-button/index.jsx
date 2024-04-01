@@ -6,20 +6,22 @@ export const RadioButton = (props) => {
         name,
         id,
         children,
-        checked
+        checked,
+        className
     } = props;
     return (
-        <div className={css.radioButton}>
+        <div className={`${css.radioButton} ${className}`}>
             <input
                 type='radio'
                 id={id}
                 name={name}
                 className='d-0'
                 checked={checked}
+                onChange={() => { }}
             />
             <label
                 htmlFor={id}
-                className={css.radioButton__label}
+                className={`${css.radioButton__label} `}
             >
                 <div className={css.radioButton__circle}>
                     <div className={css.radioButton__dot}></div>
@@ -35,7 +37,11 @@ export const RadioButton = (props) => {
 
 RadioButton.propTypes = {
     name: PropTypes.string,
-    id: PropTypes.id,
+    id: PropTypes.string,
     children: PropTypes.node,
-    checked: PropTypes.bool
+    checked: PropTypes.bool,
+    className: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+    ]),
 }

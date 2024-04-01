@@ -1,0 +1,8 @@
+@import 'src/components/global/base.scss';
+
+.captcha {
+    display: inline-block;
+    border: 1px solid $border-color;
+    padding: 10px;
+    border-radius: $border-radius;
+}

@@ -18,8 +18,9 @@ const Profile = lazy(() => import('pages/profile'));
 const Referral = lazy(() => import('pages/referral'));
 const BuyHistory = lazy(() => import('pages/buy-history'));
 const SellHistory = lazy(() => import('pages/sell-history'));
-const ChangePassword = lazy(() => import('pages/change-password'))
-const Sell = lazy(() => import('pages/sell'))
+const ChangePassword = lazy(() => import('pages/change-password'));
+const Sell = lazy(() => import('pages/sell'));
+const Buy = lazy(() => import('pages/buy'));
 
 export const router = createBrowserRouter([
   {
@@ -111,6 +112,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense>
             <Sell />
+          </Suspense>
+        )
+      },
+      {
+        path: url.buy,
+        element: (
+          <Suspense>
+            <Buy />
           </Suspense>
         )
       }

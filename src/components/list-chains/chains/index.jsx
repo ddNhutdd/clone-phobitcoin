@@ -32,7 +32,7 @@ function Chains(props) {
                 <span className={`${css.chains__price} --text-green`}>
                     {item.buyPrice}
                 </span>
-                <Button type={buttonType.success}>Mua Ngay</Button>
+                <Button onClick={redirectPage.bind(null, url.buy)} type={buttonType.success}>Mua Ngay</Button>
             </div>
         </Card>
     )

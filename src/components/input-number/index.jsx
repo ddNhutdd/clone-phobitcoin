@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
+import css from './input-number.module.scss';
 
 function InputNumber(props) {
     const {
         onChange,
         id,
-        errorMessage
+        errorMessage,
+        text,
+        disabled
     } = props;
     const listKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
 
@@ -14,7 +17,6 @@ function InputNumber(props) {
         //validate onchange
         onChange(event);
     }
-
     const formatInput = (event) => {
         let { value } = event.target;
         if (value === '') {
@@ -72,20 +74,34 @@ function InputNumber(props) {
         }
         return str
     }
+    const renderClassDisabled = () => disabled ? css.disabled : '';
 
     return (
-        <input
-            id={id}
-            type="text"
-            onChange={handleChange}
-        />
+        <div className={css.inputNumber}>
+            <div className={`${css.inputNumber__container} ${renderClassDisabled()}`}>
+                <input
+                    id={id}
+                    type="text"
+                    onChange={handleChange}
+                    disabled={disabled}
+                />
+                <div className={css.inputNumber__text}>
+                    {text}
+                </div>
+            </div>
+            <div className={css.inputNumberError}>
+                {errorMessage}
+            </div>
+        </div>
     );
 }
 
 InputNumber.propTypes = {
     onChange: PropTypes.func,
     id: PropTypes.string,
-    errorMessage: PropTypes.string
+    errorMessage: PropTypes.string,
+    text: PropTypes.string,
+    disabled: PropTypes.bool
 };
 
 export default InputNumber

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import css from './sell.module.scss';
 import { useDispatch } from 'react-redux';
 import { setShowContentSidebar, sidebarContent } from 'src/redux/slices/user-template';
@@ -11,6 +11,9 @@ import InputNumber from 'src/components/input-number';
 import { NavLink } from 'react-router-dom';
 import { RadioButton } from 'src/components/radio-button';
 import Input from 'src/components/input';
+import { validateCaptcha } from 'react-simple-captcha';
+import { Captcha } from 'src/components/captcha';
+import BuySellGuide from 'src/components/buy-sell-guide';
 
 function Sell() {
     const dispatch = useDispatch();
@@ -29,32 +32,54 @@ function Sell() {
         }
     }, [])
 
+    const captchaInputElement = useRef(null);
+
+    const validateCapcha = () => {
+        let user_captcha_value = captchaInputElement.current.value;
+        if (validateCaptcha(user_captcha_value) == true) {
+            console.log('capcha matched');
+        } else {
+            console.log('Captcha Does Not Match');
+        }
+    }
+
     return (
         <div className={css.sell}>
             <Card className={css.sell__main}>
                 <div className={css.sell__main_header}>
                     Giao Dịch Bán Bitcoin (BTC)
                 </div>
-                <div className={css.sell__main}>
+                <div className={css.sell__main__content}>
                     <div className={css.sell__main__input}>
-                        <label htmlFor='amountEth'>Số lượng ETH bán</label>
+                        <label
+                            htmlFor='amountEth'
+                            className='--text-pink'
+                        >
+                            Số lượng ETH bán
+                        </label>
                         <InputNumber
                             id='amountEth'
+                            text='ETH'
+                            errorMessage='Số tiền bạn nhập vượt quá số dư hiện có của chúng tôi'
                         />
                     </div>
                     <div className={css.sell__main__input}>
-                        <label>Giao thức</label>
-                        <div>
+                        <label className='--text-pink'>
+                            Giao thức
+                        </label>
+                        <div className={css.sell__radioContainer}>
                             <RadioButton
-                                id={`ERC20`}
+                                id={'ERC20'}
                                 name={`protocol`}
+                                className={css.sell__radioItem}
                             >
                                 ERC20
                             </RadioButton>
                             <RadioButton
-                                id={`BEP20`}
+                                id={'BEP20'}
                                 name={`protocol`}
                                 checked={true}
+                                className={css.sell__radioItem}
                             >
                                 BEP20 - BSC
                             </RadioButton>
@@ -63,12 +88,13 @@ function Sell() {
                     <div className={css.sell__main__input}>
                         <label htmlFor="accountNumber">Số tài khoản</label>
                         <Input
-                            id={`accountNumber`}
+                            id={'accountNumber'}
                             errorMessage={
-                                <>
+                                <div className={css.sell__main__input__error}>
                                     Hãy cập nhật STK để Lần sau bạn sẽ không cần phải nhập STK nữa.
+                                    {" "}
                                     <NavLink>Cập nhật STK TẠI ĐÂY</NavLink>
-                                </>}
+                                </div>}
                         />
                     </div>
                     <div className={css.sell__main__input}>
@@ -82,30 +108,53 @@ function Sell() {
                             Tên tài khoản nhận tiền
                         </label>
                         <Input
-                            id={`accountName`}
+                            id={'accountName'}
                         />
                     </div>
                     <div className={css.sell__main__input}>
                         <label htmlFor="total">Thành Tiền: </label>
-                        <Input />
+                        <InputNumber
+                            text='VND'
+                            disabled={true}
+                        />
+                    </div>
+                    <div className={css.sell__main__input}>
+                        <label>Nhập dãy số captcha</label>
+                        <div className='flex justify-end justify-md-start'>
+                            <Captcha />
+                        </div>
+                    </div>
+                    <div className={css.sell__main__input}>
+                        <div></div>
+                        <div>
+                            <Input
+                                ref={captchaInputElement}
+                                placeholder="Nhập captcha"
+                                type="text" />
+                        </div>
+
                     </div>
                 </div>
-                <div className={css.sell__main_footer}>
-                    <Button type={buttonType.oneTime}>Tiếp tục</Button>
-                    <div>
+                <div className={css.sell__main__footer}>
+                    <Button onClick={validateCapcha} type={buttonType.oneTime}>Tiếp tục</Button>
+                    <div className={css.sell__main__footer__message}>
                         Vui lòng
+                        {" "}
                         <NavLink>
                             Đăng nhập
                         </NavLink>
+                        {" "}
                         hoặc
+                        {" "}
                         <NavLink>
                             Đăng ký
                         </NavLink>
+                        {" "}
                         tài khoản để giao dịch.
                     </div>
                 </div>
             </Card>
-            <Card className={css.sell__guide}></Card>
+            <BuySellGuide />
         </div>
     )
 }
