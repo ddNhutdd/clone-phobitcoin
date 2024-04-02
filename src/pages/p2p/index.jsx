@@ -21,8 +21,6 @@ function P2p() {
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
 
-
-
     useEffect(() => {
         if (media === mediaBreakPoint.width_576 || media === mediaBreakPoint.width_768) {
             dispatch(setShowContentSidebar({}))
@@ -76,6 +74,7 @@ function P2p() {
                             <td>
                                 <div className="flex gap-2">
                                     <Button
+                                        onClick={onOpenModal}
                                         type={buttonType.success}
                                     >
                                         Mở Màn Hình Thanh Toán
@@ -145,7 +144,6 @@ function P2p() {
                     </tbody>
                 </table>
             </div>
-            <button onClick={onOpenModal}>Open modal</button>
             <Modal
                 classNames={{
                     modal: 'customModal',
@@ -155,7 +153,7 @@ function P2p() {
                 center
                 showCloseIcon={false}
             >
-                <ModalContent></ModalContent>
+                <ModalContent closeModal={onCloseModal}></ModalContent>
             </Modal>
         </Card >
     )

@@ -1,13 +1,17 @@
 import Button, { buttonType } from 'src/components/button';
 import css from "./modal-content.module.scss";
+import PropTypes from 'prop-types';
 
 function ModalContent(props) {
     const {
         closeModal
     } = props;
+
     return (
         <div className={css.modalContent}>
-            <div className={css.modalContent__header}>Màn hình thanh toán</div>
+            <div className={css.modalContent__header}>
+                Màn hình thanh toán
+            </div>
             <div className={css.modalContent__body}>
                 <div>
                     Bạn đang mua 12 Tether (USDT) từ Phố Bitcoin về địa chỉ ví 0xa93d9a5400de6f610b5331cad1b6e3b9bbb0f4a1ca9d21f8c4dd50f3674e1a32 (Giao Thức: BEP20 ).
@@ -79,6 +83,7 @@ function ModalContent(props) {
                     Gửi hình ảnh thanh toán
                 </Button>
                 <Button
+                    onClick={closeModal}
                     type={buttonType.danger}
                 >
                     Đóng Lại
@@ -86,6 +91,10 @@ function ModalContent(props) {
             </div>
         </div>
     )
+}
+
+ModalContent.propTypes = {
+    closeModal: PropTypes.func,
 }
 
 export default ModalContent
