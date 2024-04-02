@@ -1,10 +1,18 @@
-import { actionType, url } from 'src/constants';
-import Card from '../card';
-import HistoryItem from './history-item';
-import css from './history.module.scss';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux"
+import Card from "src/components/card";
+import { actionType, mediaBreakPoint, sidebarDefault } from "src/constants";
+import { setShowContentSidebar, sidebarContent } from "src/redux/slices/user-template";
+import css from './search-transactions.module.scss';
+import HistoryItem from "src/components/history/history-item";
+import Input from "src/components/input";
+import Button, { buttonType } from "src/components/button";
+import Paging from "src/components/paging";
+import useMediaQuery from "src/hooks/use-media";
 
-function History() {
+function SearchTransactions() {
+    const dispatch = useDispatch();
+    const media = useMediaQuery();
     const list = [
         {
             id: 1,
@@ -128,18 +136,67 @@ function History() {
         }
     ]
 
-    const renderListHistory = () => list.map(item => <HistoryItem key={item.id} item={item}></HistoryItem>)
+    const renderTransactions = () => list.map(item => <HistoryItem key={item.id} item={item}></HistoryItem>)
+    const pageChangeHandle = (page) => console.log(page);
+    const showSidebar = () => dispatch(setShowContentSidebar({
+        [sidebarContent.chains]: true
+    }));
+
+    const [page, setPage] = useState(1);
+    const [totalPage] = useState(100);
+
+    useEffect(() => {
+        showSidebar();
+
+        return () => {
+            dispatch(setShowContentSidebar(sidebarDefault))
+        }
+    }, [])
+    useEffect(() => {
+        const isEqualSmallTable = media === mediaBreakPoint.width_576 || media === mediaBreakPoint.width_768
+        if (isEqualSmallTable) {
+            dispatch(setShowContentSidebar({}));
+        } else {
+            showSidebar();
+        }
+    }, [media])
+
     return (
-        <Card className={css.history}>
-            <h2 className='--text-blue'>Lịch Sử</h2>
-            <div className={css.history__content}>
-                {renderListHistory()}
+        <div className={css.searchTransactions}>
+            <Card className={css.searchTransactions__card}>
+                <div className={`${css.searchTransactions__header} ${`--header-component`}`}>
+                    Tra Cứu Giao Dịch:
+                </div>
+                <div className={css.searchTransactions__body}>
+                    <label htmlFor="transactionCode">
+                        Mã giao dịch:
+                    </label>
+                    <Input id={`transactionCode`} />
+                </div>
+                <div className={css.searchTransactions__footer}>
+                    <Button type={buttonType.danger}>
+                        Kiểm tra
+                    </Button>
+                </div>
+            </Card>
+            <div className={css.searchTransactions__transaction}>
+                <div className={css.searchTransactions__title}>
+                    Tất cả giao dịch
+                </div>
+                <div className={css.searchTransactions__list}>
+                    {renderTransactions()}
+                </div>
+                <div className={css.searchTransactions__paging}>
+                    <Paging
+                        page={page}
+                        setPage={setPage}
+                        totalPage={totalPage}
+                        onChange={pageChangeHandle}
+                    />
+                </div>
             </div>
-            <div className={`${css.history__more}`}>
-                <NavLink to={url.searchTransactions} className={'--text-blue'}>Xem Thêm</NavLink>
-            </div>
-        </Card>
+        </div>
     )
 }
 
-export default History
+export default SearchTransactions

@@ -1,0 +1,50 @@
+@import 'src/components/global/base.scss';
+
+.blog {
+    .blog__title {
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .blog__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .blog__item {
+            width: calc(50% - 10px);
+            display: flex;
+            gap: 20px;
+
+            @media screen and (max-width: 992px) {
+                width: 100%;
+            }
+
+            a {
+                display: block;
+                color: $blue;
+                text-decoration: none;
+                font-weight: 500;
+
+                &:hover {
+                    color: $blue-2;
+                    text-decoration: underline;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                &:first-child {
+                    width: 30%;
+                }
+
+                &:last-child {
+                    width: 70%;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}

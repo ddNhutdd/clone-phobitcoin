@@ -1,0 +1,63 @@
+@import 'src/components/global/base.scss';
+
+.searchTransactions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .searchTransactions__card {
+        padding: 0;
+
+        .searchTransactions__header {
+            padding: 16px;
+            margin-bottom: 0;
+            color: $blue;
+        }
+
+        .searchTransactions__body {
+            padding: 16px;
+            border: 1px solid $border-color;
+            border-top: 2px solid $border-color;
+            border-bottom: 2px solid $border-color;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: calc(30% - 10px) calc(70% - 10px);
+            background-color: $background-color-4;
+
+            label {
+                font-weight: 700;
+            }
+        }
+
+        .searchTransactions__footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px;
+        }
+    }
+
+    .searchTransactions__transaction {
+        padding: 15px;
+        border: 1px solid $border-color;
+        background-color: $background-color-4;
+
+        .searchTransactions__title {
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            color: $blue;
+            margin-bottom: 5px;
+
+        }
+
+        .searchTransactions__list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .searchTransactions__paging {
+            margin-top: 10px;
+        }
+    }
+}

@@ -15,7 +15,6 @@ function Contact() {
         }
     }, []);
     useEffect(() => {
-        console.log(media);
         if (media === mediaBreakPoint.width_576 || media === mediaBreakPoint.width_768) {
             dispatch(setShowContentSidebar({}))
         } else {

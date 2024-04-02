@@ -7,12 +7,12 @@ function Post(props) {
     return (
         <div className={css.post}>
             <div className={css.post__img}>
-                <NavLink>
+                <NavLink to={item.url}>
                     <img src={item.img} alt={item.header} />
                 </NavLink>
             </div>
             <div className={css.post__header}>
-                <NavLink>
+                <NavLink to={item.url}>
                     {item.header}
                 </NavLink>
             </div>

@@ -18,7 +18,9 @@ export const url = {
     changePassword: '/change-password',
     sell: '/sell',
     buy: '/buy',
-    p2p: '/p2p'
+    p2p: '/p2p',
+    searchTransactions: '/search-transactions',
+    article: '/article',
 }
 
 export const apiStatus = {

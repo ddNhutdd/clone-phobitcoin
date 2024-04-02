@@ -1,0 +1,104 @@
+@import 'src/components/global/base.scss';
+
+$bg-color: rgba(19, 19, 19, 0.74);
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: $bg-color;
+
+    .responsive {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 600px;
+        padding: 16px;
+
+        @media screen and (max-width: 576px) {
+            width: 100%;
+        }
+
+        .modal {
+            padding: 0;
+            overflow-x: auto;
+        }
+    }
+}
+
+
+@keyframes overlayFadeIn {
+    0% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: $bg-color;
+    }
+}
+
+.overlayFadeIn {
+    animation: overlayFadeIn .2s;
+}
+
+@keyframes overlayFadeOut {
+    0% {
+        background-color: $bg-color;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.overlayFadeOut {
+    animation: overlayFadeOut .4s;
+    background-color: transparent;
+}
+
+@keyframes positionUp {
+    0% {
+        margin-top: 200px;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+}
+
+.positionUp {
+    animation: positionUp 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    animation: fadeOut .4s;
+    opacity: 0;
+}

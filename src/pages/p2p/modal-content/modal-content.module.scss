@@ -13,6 +13,31 @@
 
     .modalContent__body {
         padding: 16px;
+        overflow-x: auto;
+
+        .modalContent__table {
+            width: 100%;
+
+            table {
+                border-collapse: collapse;
+                border: 1px solid $border-color;
+                width: 100%;
+                margin-top: 20px;
+
+                th,
+                td {
+                    border: 1px solid $border-color;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .modalContent__qr {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
     }
 
     .modalContent__footer {
