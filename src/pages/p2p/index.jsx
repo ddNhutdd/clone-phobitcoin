@@ -8,7 +8,6 @@ import { setShowContentSidebar, sidebarContent } from "src/redux/slices/user-tem
 import Spiner from "src/components/spiner";
 import Button, { buttonType } from "src/components/button";
 import Input from "src/components/input";
-import 'react-responsive-modal/styles.css';
 import ModalContent from "./modal-content";
 import { generateQR } from "src/services/vietqr.services";
 import Modal from "src/components/modal";
